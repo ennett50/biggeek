@@ -1,0 +1,30 @@
+doctype
+html
+	head
+		title Макеты верстки
+		meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+		link(rel="stylesheet", type="text/css", href="./_index/style.css")
+
+		//if lt IE 9
+			<script>
+				document.createElement('header');
+				document.createElement('nav');
+				document.createElement('section');
+				document.createElement('article');
+				document.createElement('aside');
+				document.createElement('footer');
+			</script>
+
+	body
+		h1 Biggeek
+		section
+			.block-text
+				table
+					tr
+						th(width="30%") Ссылка
+						th Название страницы
+					each page in locals.pages
+						tr
+							td
+								a(href="#{page.file}.html", target="_blank") #{page.file}.html
+							td #{page.name}
