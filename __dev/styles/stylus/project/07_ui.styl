@@ -1,0 +1,224 @@
+.ui-buttonset
+	margin 0
+
+.ui-type-checkbox,
+.ui-type-radio
+	line-height 16px
+	&,
+	.ui-button-text
+		border 0
+		border-radius 0
+		padding 0
+		margin auto
+		background transparent
+		font-weight 400
+		font-size 13px
+		color #000
+		text-align left
+	.ui-button-text
+		max-width 100%
+		border-box()
+		overflow hidden
+		line-height 16px
+		margin-left: 27px;
+		display: block;
+		padding: 0;
+		color #333
+		font-size 13px
+		roboto_condensed()
+		margin-top: 3.5px;
+		span
+			display inline-block
+			vertical-align middle
+	&:before
+		content ''
+		display inline-block
+		vertical-align top
+		background-position center
+		background-repeat no-repeat
+		border-box()
+		trans()
+		margin-top 2px
+
+.ui-type-checkbox
+	&:before
+		size(18px)
+		border 1px solid #e6e6e6
+		background-color #fff
+		float left
+	&.ui-state-active
+		&:before
+			background-image images('icons/icon-checkbox.png')
+
+.ui-type-radio
+	&:before
+		size(18px)
+		border 1px solid #e6e6e6
+		background-color #fff
+		border-radius 50%
+		float left
+	&.ui-state-active
+		&:before
+			background-image images('icons/icon-radio.png')
+
+/*Custom select styling*/
+/*button*/
+.ui-selectmenu-button
+	color #818181
+	font-size 16px
+	roboto_condensed()
+	width 100% !important
+	font-weight normal
+	vertical-align middle
+	border-radius 0
+
+.ui-selectmenu-button.ui-state-default
+	border 1px solid #e6e6e6
+	background #fafafa
+	font-family 'Ubuntu', Arial, sans-serif;
+	font-weight 300;
+	color #b3b3b3
+	outline none
+
+.ui-selectmenu-button.ui-state-default[aria-expanded="true"]
+	span.ui-icon
+		sprite($s-select-arrow-up)
+
+.ui-selectmenu-button span.ui-selectmenu-text
+	padding: 9px 25px 9px 10px;
+	font-size 14px
+
+.ui-selectmenu-button .ui-icon
+	background-image: none;
+
+/*.ui-selectmenu-button .ui-selectmenu-text*/
+/*font-size 16px*/
+/*background white*/
+.ui-selectmenu-button span.ui-icon
+	sprite($s-select-arrow)
+	display block
+	right 10px
+	margin-top -3px
+
+/*button hover*/
+.ui-selectmenu-button.ui-state-hover
+	//background none
+	outline none
+
+/*menu*/
+
+.ui-selectmenu-menu .ui-menu
+	padding-bottom 0
+	border-radius 0
+	border: 1px solid #e6e6e6;
+	border-top: 0;
+	color #808080
+	font-size 14px
+
+.ui-selectmenu-menu .ui-menu-item
+	padding 6px 10px
+	background white
+	border-bottom none
+	trans();
+
+.ui-selectmenu-menu .ui-menu-item:hover
+	background #f5f5f5
+	color #2d99f1
+
+.ui-selectmenu-menu .ui-menu-item:first-child
+	border-top none
+
+.ui-state-focus, .ui-widget-content .ui-state-focus
+	font-weight normal
+	border 0
+
+.ui-selectmenu-menu .ui-menu-item + .ui-menu-item
+	border-top none
+
+.ui-selectmenu-menu .ui-menu-item + .ui-menu-item:after
+	content ""
+	position absolute
+	top 0
+	left 10px
+	right 10px
+	height 1px
+
+.ui-selectmenu-menu .ui-menu-item:hover + .ui-menu-item:after,
+.ui-selectmenu-menu .ui-menu-item:hover:after
+	background transparent
+
+.ui-selectmenu-menu .ui-state-focus, .ui-menu .ui-state-active
+	margin 0
+
+.ui-menu
+	border none
+	background none
+
+.noUi-background
+	background #e6e6e6
+
+.noUi-target
+	border-radius: 0;
+
+.noUi-horizontal
+	height 7px
+	margin-bottom: 8px;
+
+.noUi-origin
+	border-radius 0
+
+.noUi-horizontal .noUi-handle
+	left: -10px;
+	top: 9px;
+	width: 8px;
+	height: 6px;
+	margin-left: -4px;
+	position relative
+	&.noUi-handle-upper
+		margin-left 4px
+	&:before
+		position absolute
+		top 0
+		left 0
+		content ''
+		sprite($s-arrow-slider)
+		display block
+
+.noUi-connect .noUi-handle
+	left 0
+
+.noUi-handle:after, .noUi-handle:before
+	display none
+
+.noUi-connect
+	background #6a3b6b
+
+.nano
+	width: 100%;
+	max-height: 150px;
+	border: 1px solid #e6e6e6
+	border-top 0
+
+
+.nano > .nano-content
+	padding: 10px;
+	width 100%
+
+.nano > .nano-pane
+	background: #e6e6e6;
+	right: 2px;
+	top: 2px;
+	bottom: 2px;
+
+
+.nano > .nano-pane > .nano-slider {
+	background: #6a3b6b;
+}
+.nano>.nano-pane
+	opacity 1
+	width 6px
+	border-radius 0
+.nano>.nano-pane>.nano-slider
+	margin 0
+	border-radius 0
+

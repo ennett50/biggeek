@@ -91,13 +91,16 @@ a
 
 .falseLink
 	display inline-block
-	border-bottom 1px dotted #333
+	border-bottom 1px dotted #6a3b6b
 	cursor pointer
-	color #333
+	color #6a3b6b
 	text-decoration none
 	trans()
+	line-height normal
+	margin-bottom 13px
 	&:hover
-		opacity 0.7
+		color #2d99f1
+		border-color #2d99f1
 #utp + .container .text
 	font: 300 11px/18px "Ubuntu";
 	color: #ccc;
@@ -156,3 +159,53 @@ nav .container ul#nav_left > li
 nav .container ul#nav_left > li > a
 	@media (max-width: 1100px)
 		padding-right 40px
+
+ul#nav_left .combo .anounce
+	@media (max-width: 1100px)
+		display none
+
+ul#nav_left > li > div
+	@media (max-width: 1100px)
+		width 100%
+
+ul#nav_left ul ul
+	@media (max-width: 1100px)
+		display none
+
+ul#nav_left > li > div > ul > li
+	@media (max-width: 1100px)
+		width 100%
+		padding 0
+		line-height: 48px;
+
+ul#nav_left div > ul > li > a
+	@media (max-width: 1100px)
+		min-height 48px
+		display block
+		margin 0
+		line-height 48px
+
+ul#nav_left .combo > ul
+	@media (max-width: 1100px)
+		width 100%
+.inner-wrapper
+	padding: 40px 20px 0;
+
+h1
+	color #333
+	font-size 32px
+	margin-bottom 35px;
+	font-family  'Open Sans', Arial, sans-serif;
+	font-weight 300
+
+.left
+	float left
+.right
+	float right
+
+.seo-text
+	font: 300 11px/18px "Ubuntu";
+	color: #ccc;
+	margin-bottom 100px
+	@media (max-width: 770px)
+		margin-bottom 40px

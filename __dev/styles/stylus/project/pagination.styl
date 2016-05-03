@@ -1,0 +1,43 @@
+.pagination
+	position relative
+	margin-bottom 65px
+	margin-top 25px
+	text-align center
+	@media (max-width: 770px)
+		margin-bottom 30px
+	&-prev, &-next, &-item
+		display inline-block
+		vertical-align middle
+		border 1px solid #e6e6e6
+		background #fafafa
+		width 40px;
+		height 40px
+		border-box()
+		line-height 40px
+		position relative
+		text-align center
+		color #754d76
+		margin 0 3px
+	&-item
+		&.__active
+			background-color #fff
+	&-prev, &-next
+		trans()
+		&:hover
+			opacity 0.8
+		&:before
+			content ''
+			position absolute
+			top 50%
+			margin-top -7px
+			margin-left -4px
+			left 50%
+			display block
+		&.__disabled
+			opacity 0.5
+	&-prev
+		&:before
+			sprite($s-pagination-left)
+	&-next
+		&:before
+			sprite($s-pagination-right)

@@ -291,23 +291,47 @@ var gulpFilter = require('gulp-filter');
 var mainBowerFiles = require('main-bower-files');
 var order = require("gulp-order");
 
-gulp.task('bowerJS:build', function () {
-    var jsFilter = gulpFilter('**/*.js');
+//gulp.task('bowerJS:build', function () {
+//    var jsFilter = gulpFilter('**/*.js');
+//
+//    gulp.src(mainBowerFiles({
+//        includeDev: false,
+//        bowerDirectory: 'bower_components',
+//        bowerJson: 'bower.json'
+//    }))
+//        .pipe(jsFilter)
+//        //.pipe(order([
+//        //    '*',
+//        //    'owl.carousel.min.js'
+//        //]))
+//        .pipe(concat('vendor.min.js'))
+//        .on('error', showErr)
+//        .pipe(uglify())
+//        .pipe(gulp.dest('../web/js'));
+//
+//
+//});
 
-    gulp.src(mainBowerFiles({
-        includeDev: false,
-        bowerDirectory: 'bower_components',
-        bowerJson: 'bower.json'
-    }))
-        .pipe(jsFilter)
-        //.pipe(order([
-        //    '*',
-        //    'owl.carousel.min.js'
-        //]))
+
+gulp.task('bowerJS:build', function () {
+    gulp.src([
+        'bower_components/bootstrap/dist/js/bootstrap.js',
+        'bower_components/fancybox/source/jquery.fancybox.pack.js',
+        'bower_components/fancybox/source/helpers/jquery.fancybox-media.js',
+        'bower_components/jquery.maskedinput/dist/jquery.maskedinput.js',
+        'bower_components/jquery-ui/jquery-ui.js',
+        'bower_components/jquery-ui-touch-punch-improved/jquery.ui.touch-punch-improved.js',
+        'bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.js',
+        'bower_components/nouislider/distribute/nouislider.js',
+        'bower_components/owl.carousel/dist/owl.carousel.min.js'
+
+    ])
         .pipe(concat('vendor.min.js'))
         .on('error', showErr)
         .pipe(uglify())
         .pipe(gulp.dest('../web/js'));
+
+
 });
 gulp.task('bowerCSS:build', function () {
     var cssFilter = gulpFilter('**/*.css');

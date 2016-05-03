@@ -1,0 +1,13 @@
+.catalog-sort
+	float right
+	.ui-selectmenu-button.ui-state-default
+		width auto!important
+		border-color transparent
+		background transparent
+		max-width 300px
+		trans()
+		&[aria-expanded="true"], &.ui-state-hover
+			border: 1px solid #e6e6e6;
+			background: #fafafa;
+		span.ui-selectmenu-text:before
+			content: 'Сортировать по: ';

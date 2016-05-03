@@ -646,6 +646,7 @@ input[type='text'], textarea {
     color: #b3b3b3;
     font-size: 13px;
     font-weight: 300;
+    width: 100%;
 }
 
 textarea {
@@ -1416,9 +1417,6 @@ input[type='submit'], button, input[type='button'] {
     display: inline-block;
     vertical-align: middle;
 }
-#lk-link {
-    padding: 0;
-}
 
 .sidebar-wrap .sidebar #location-select a {
     font-weight: 400;
@@ -1957,6 +1955,7 @@ pozvonim-button * {
 @media (max-width: 850px) {
     .navbar-static-top #lk-link {
         display: none;
+        padding: 0;
     }
 }
 

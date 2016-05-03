@@ -1,0 +1,77 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Каталог"
+block title
+	title= currentPageTitle
+block block-content
+	div.container.inner-wrapper
+		+breadcrumbsSimple(['Каталог', 'Смартфоны'])
+
+		div.catalog-header.clearfix
+			h1 Каталог
+			div.catalog-sort
+				select
+					option Новизне
+					option Популярности
+					option Цене (возрастание)
+					option Цене (убывание)
+					option Отзывам
+
+
+
+		div.row
+			div.col-lg-3.col-md-3
+				include modules/catalog-filter
+			div.col-lg-9.col-md-9
+				div.product-list.__catalog
+					-for(var i = 0; i < 3; i++)
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								div.item-info
+									a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+									.price
+										ins 26 990,-
+									a.btn.to_cart(href='#')
+										i
+										| В корзину
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								div.item-info
+									a.title(href='#') Apple iPhone 6 64Гб Space Grey
+									.price
+										del 58 990
+										!='\n'
+										ins 55 990,-
+									a.btn.to_cart(href='#')
+										i
+										| В корзину
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								div.item-info
+									a.title(href='#') Наушники Beats Pro белые
+									.price
+										ins 24 990,-
+									a.btn.to_cart(href='#')
+										i
+										| В корзину
+				div.pagination
+					span.pagination-prev.__disabled
+					span.pagination-item.__active 1
+					a(href="#").pagination-item 2
+					a(href="#").pagination-item 3
+					a(href="#").pagination-item.hidden-sm.hidden-xs 4
+					a(href="#").pagination-item.hidden-sm.hidden-xs 5
+					a(href="#").pagination-next
+
+				div.seo-text
+					p Мы напрямую работаем с такими крупными компаниями, как Apple, Samsung, Sony, Blackberry, SGP, incase и Jawbone, что дает полную уверенность в качестве товара и цены. Мы всегда честны перед вами и привыкли ассоциировать наш магазин со словом "надежность". Поэтому на весь товар мы даем годовую гарантию. Наш сервисный центр максимально быстро решит любые проблемы и проведет диагностику.
+					p Мы с гордостью сообщаем вам и о том, что являемся одним из самых активных интернет-магазинов в социальных сетях и регулярно проводим уникальные предложения и предлагаем подарки и специальные условия покупки для подписчиков! Приобретая Mac, iPad, а также новейшие iPhone 5 и iPod, вы можете рассчитывать на внимательное отношение к каждому клиенту, квалифицированную помощь в решении технических вопросов и скидки на дальнейшие покупки, мы всегда рады слышать вас и сделать ваше знакомство с гаджетами приятнее!
+
+
+	include modules/utp

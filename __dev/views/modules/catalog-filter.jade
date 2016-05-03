@@ -1,0 +1,83 @@
+div.catalog-filter
+	div.hidden-lg.hidden-md.catalog-filter-btn.js-btn-filter Фильтровать
+	div.catalog-filter-item.hidden-sm.hidden-xs
+		div.catalog-filter-category.js-filter-category Цена, руб
+		div.catalog-filter-content
+			div.filter-info.row(data-filter-slider data-filter-slider-min="750" data-filter-slider-max="89850" data-filter-slider-step="500")
+				div.col-sm-5.col-md-12
+					div.filter-info-text.left
+						input(type="text" value="26250" data-filter-slider-element="start-lower link-lower")
+					div.filter-info-text.right
+						input(type="text" value="89850" data-filter-slider-element="start-upper link-upper")
+					div.clearfix
+				div.col-sm-7.col-md-12
+					div(class="filter-slider" data-filter-slider-element="line")
+					div.left.filter-info-value 750
+					div.right.filter-info-value 89850
+					div.clearfix
+	div.catalog-filter-item.hidden-sm.hidden-xs
+		div.catalog-filter-category.js-filter-category Бренды
+		div.catalog-filter-content
+			div.catalog-filter-list
+				input(id="test-1" type="checkbox")
+				label(for="test-1") Xiaomi
+			div.catalog-filter-list
+				input(id="test-2" type="checkbox")
+				label(for="test-2") Westrn Digital
+			div.catalog-filter-list
+				input(id="test-3" type="checkbox")
+				label(for="test-3") Apple
+			div.catalog-filter-list
+				input(id="test-4" type="checkbox")
+				label(for="test-4") GoPro
+			div.catalog-filter-list
+				input(id="test-5" type="checkbox")
+				label(for="test-5") Jawbone
+			div.js-filter-more.falseLink Еще бренды
+
+			div.catalog-filter-search
+				input(type="text" placeholder="Быстрый поиск").js-search-catalog
+				div.js-nano-scroller.nano
+					div.nano-content
+						div.catalog-filter-list
+							input(id="test-11" type="checkbox")
+							label(for="test-11") Xiaomi
+						div.catalog-filter-list
+							input(id="test-22" type="checkbox")
+							label(for="test-22") Westrn Digital
+						div.catalog-filter-list
+							input(id="test-33" type="checkbox")
+							label(for="test-33") Apple
+						div.catalog-filter-list
+							input(id="test-44" type="checkbox")
+							label(for="test-44") GoPro
+						div.catalog-filter-list
+							input(id="test-55" type="checkbox")
+							label(for="test-55") Jawbone
+						div.catalog-filter-list
+							input(id="test-111" type="checkbox")
+							label(for="test-111") Xiaomi
+						div.catalog-filter-list
+							input(id="test-222" type="checkbox")
+							label(for="test-222") Westrn Digital
+						div.catalog-filter-list
+							input(id="test-333" type="checkbox")
+							label(for="test-333") Apple
+						div.catalog-filter-list
+							input(id="test-444" type="checkbox")
+							label(for="test-444") GoPro
+						div.catalog-filter-list
+							input(id="test-555" type="checkbox")
+							label(for="test-555") Jawbone
+	div.catalog-filter-item.hidden-sm.hidden-xs
+		div.catalog-filter-category.js-filter-category Наличие
+		div.catalog-filter-content
+			div.catalog-filter-list
+				input(id="test-q1" type="radio" name="information")
+				label(for="test-q1") В наличии
+			div.catalog-filter-list
+				input(id="test-q21" type="radio" name="information")
+				label(for="test-q21") Под заказ
+			div.catalog-filter-list
+				input(id="test-q31" type="radio" name="information")
+				label(for="test-q31") Все
