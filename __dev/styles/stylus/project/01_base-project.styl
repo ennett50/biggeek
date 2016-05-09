@@ -103,12 +103,8 @@ a
 		border-color #2d99f1
 #utp + .container .text
 	font: 300 11px/18px "Ubuntu";
-	color: #ccc;
 #footer #copyright
 	color: #ccc;
-
-
-
 
 
 
@@ -126,7 +122,7 @@ a
 		content: "";
 		display: block;
 		position: absolute;
-		top: -14px;
+		top: -15px;
 		left: -60px;
 		width: 46px;
 		height: 46px;
@@ -143,10 +139,8 @@ a
 				sprite($s-catalog-arrow-up)
 			&:after
 				background-color: #69456b;
-
-nav .container ul#nav_left > li
-	@media (max-width: 1100px)
-		border-bottom 1px solid #332233
+@media (max-width: 1100px)
+	nav .container ul#nav_left > li > a
 		position relative
 		&:after
 			content ''
@@ -156,6 +150,11 @@ nav .container ul#nav_left > li
 			top 50%
 			margin-top -6px
 			right 15px
+
+nav .container ul#nav_left > li
+	@media (max-width: 1100px)
+		border-bottom 1px solid #332233
+
 nav .container ul#nav_left > li > a
 	@media (max-width: 1100px)
 		padding-right 40px
@@ -167,6 +166,7 @@ ul#nav_left .combo .anounce
 ul#nav_left > li > div
 	@media (max-width: 1100px)
 		width 100%
+		min-height 100%
 
 ul#nav_left ul ul
 	@media (max-width: 1100px)
@@ -184,17 +184,46 @@ ul#nav_left div > ul > li > a
 		display block
 		margin 0
 		line-height 48px
+		font-weight 300
+		font-size 14px
+		transition: all 500ms ease-out;
+		background: rgb(64, 42, 64) none repeat scroll 0% 0%;
+		&:after
+			content: '';
+			sprite($s-catalog-arrow-menu)
+			display: block;
+			position: absolute;
+			top: 50%;
+			margin-top: -6px;
+			right: 15px;
+		&:hover
+			background: #563856;
+			color #fff
+
+ul#nav_left div > ul > li > a.callback-level
+	padding-left: 42px;
+	&:after
+		sprite($s-back-catalog)
+		left: 18px;
+		right: inherit;
+
+.nav-category-name
+	padding-left 18px!important
+	padding-right 18px!important
+	font-size 18px
+	background #563856
 
 ul#nav_left .combo > ul
 	@media (max-width: 1100px)
 		width 100%
 .inner-wrapper
-	padding: 40px 20px 0;
+	padding: 25px 20px 0;
 
 h1
 	color #333
 	font-size 32px
 	margin-bottom 35px;
+	line-height 40px
 	font-family  'Open Sans', Arial, sans-serif;
 	font-weight 300
 
@@ -205,7 +234,200 @@ h1
 
 .seo-text
 	font: 300 11px/18px "Ubuntu";
-	color: #ccc;
 	margin-bottom 100px
 	@media (max-width: 770px)
 		margin-bottom 40px
+#utp + .container
+	margin-top 50px
+	margin-bottom 50px
+	.seo-text
+		margin-bottom 0
+
+
+
+
+
+
+
+.slick-prev:before
+	content ''
+	sprite($s-catalog-arrow-up)
+	display inline-block
+
+.slick-next:before
+	content ''
+	sprite($s-catalog-arrow)
+	display inline-block
+
+.slick-prev
+	left: 0;
+	top: 10px;
+	text-align center
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	z-index 5
+	trans()
+	&:hover, &:focus
+		background: rgba(0,0,0,0.2);
+	@media (max-width: 655px)
+		top: 39px;
+		width: 18px;
+		height: 78px;
+		&:before
+			sprite($s-pagination-left)
+.slick-next
+	right: 0;
+	bottom: 10px;
+	text-align center
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	top inherit
+	z-index 5
+	trans()
+	@media (max-width: 655px)
+		top: 39px;
+		width: 18px;
+		height: 78px;
+		&:before
+			sprite($s-pagination-right)
+	&:hover, &:focus
+		background: rgba(0,0,0,0.2);
+.btn
+	&.__big
+		color #fff
+		font-size 18px
+		height 46px
+		line-height 44px
+		display inline-block
+		vertical-align middle
+		&:hover
+			color #333
+.btn-orange
+	background #f27151
+	padding 0 20px
+	cursor pointer
+	color #fff
+	font-size 18px
+	display inline-block
+	vertical-align middle
+	height 46px
+	line-height 44px
+	&:hover
+		opacity 0.7
+		color #fff
+	& + .btn
+		margin-right 15px
+		@media (max-width: 560px)
+			margin-right 0
+
+.tabs
+	position: relative;
+	@media (max-width: 760px)
+		display none
+	&-item
+		float: left;
+		background: #fafafa;
+		color #808080
+		font-size: 14px;
+		height: 40px;
+		position relative
+		line-height: 40px;
+		padding: 0 15px;
+		border 1px solid #e6e6e6
+		border-bottom 0
+		text-decoration: none;
+		display block
+		trans()
+		@media (max-width: 992px)
+			padding 0 7px
+
+		@media (max-width: 760px)
+			float none
+			width auto
+
+			margin 0 -15px
+			text-align center!important
+			&.__current
+				border-bottom 1px solid #e6e6e6
+				margin-bottom 15px
+
+		&.__recommend
+			float right
+			color #6a3b6b
+			font-weight bold
+			background none
+			border-color transparent
+			border-right 0
+			border-left 1px solid transparent!important
+			@media (max-width: 760px)
+				float none
+				border-top 1px solid #e6e6e6
+
+			&.__current
+				border-color #e6e6e6!important
+			span
+				border-bottom 1px dotted #6a3b6b
+
+		&.__advantages
+			float right
+			color #6a3b6b
+			border-left 1px solid #e6e6e6!important
+			font-weight bold
+			@media (max-width: 760px)
+				float none
+				border-bottom 1px solid #e6e6e6
+				& + .tabs-content-info
+					border-bottom 1px solid #e6e6e6
+		&:after
+			content ''
+			width 100%
+			left 0
+			bottom -3px
+			display block
+			height 6px
+			position absolute
+			background transparent
+			trans()
+			@media (max-width: 760px)
+				display none
+		& + &
+			border-left 0
+		&.__current, &:hover
+			background #fff
+			color #808080
+		&.__current
+			&:after
+				background #fff
+				z-index 3
+	&-ctn
+		position: relative;
+		margin-bottom: 60px;
+		padding: 25px 15px;
+		text-align left
+		border 1px solid #e6e6e6
+		@media (max-width: 760px)
+			padding 0
+			border 0
+		& + .product-list
+			padding-top 0
+		*
+			text-align left
+
+		[data-tabs-group]
+			display none
+			@media (max-width: 760px)
+				display block
+
+			&.__current
+				display block
+	&-content-info
+		@media (max-width: 760px)
+			padding: 15px;
+			margin: -15px -15px 0;
+			display: none;
+			border-left: 1px solid #e6e6e6;
+			border-right: 1px solid #e6e6e6;
+[data-tabs-group].__current
+	@media (max-width: 760px)
+		.tabs-content-info
+			display block

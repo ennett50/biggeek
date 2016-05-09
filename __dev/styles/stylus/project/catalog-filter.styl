@@ -18,6 +18,16 @@
 			border-top 0
 		&.__active
 			display block!important
+	&-clear
+		&:before
+			content ''
+			display inline-block
+			background-image images("icons/icon-close.png")
+			background-position 50% 50%
+			background-repeat no-repeat
+			width 9px
+			height 9px
+			cursor pointer
 	&-category
 		background #fafafa
 		padding 8px 10px
@@ -25,7 +35,10 @@
 		position relative
 		cursor pointer
 		trans()
-
+		span
+			display inline-block
+			vertical-align middle
+			margin-right 10px
 		&:after
 			content ''
 			position absolute
@@ -71,6 +84,18 @@
 		opacity 0
 		visibility hidden
 		height 0
+		position relative
+		> input[type="text"]
+			padding 0 30px 0 12px
+		&-clear
+			position absolute
+			top: 12px;
+			cursor pointer
+			right: 10px;
+			&:after
+				content ''
+				display block
+				sprite($s-clear-search)
 		&.__active
 			opacity 1
 			visibility visible

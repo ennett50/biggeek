@@ -1,0 +1,214 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Карточка товара"
+block title
+	title= currentPageTitle
+block scripts
+	script(type="text/javascript" src="http://vk.com/js/api/openapi.js?96")
+	script.
+		VK.init({apiId: 3700276, onlyWidgets: true});
+
+block block-content
+	div.container.inner-wrapper
+		+breadcrumbsSimple(['Каталог', 'Apple', 'Apple Watch', 'Apple Watch Sport 42мм белый спортивный ремешок'])
+
+		h1 Apple Watch Sport 42мм белый спортивный ремешок
+
+		div.product-article Артикул: MN003044c
+
+		div.row
+			div.col-lg-6.col-md-6.clearfix
+				include modules/gallery
+
+			div.col-lg-6.col-md-6.clearfix
+				include modules/product-info
+
+				div.product-services
+					div.product-services-title Услуги:
+					div.product-services-item
+						input(type="checkbox" id="service-1")
+						label(for="service-1") Наклейки пленки <span class="product-services-price">300,-</span>
+					div.product-services-item
+						input(type="checkbox" id="service-2")
+						label(for="service-2") Страховка <span class="product-services-price">500,-</span>
+					div.product-services-item
+						input(type="checkbox" id="service-3")
+						label(for="service-3") Установка приложений <span class="product-services-price">8300,-</span>
+				div.product-action.clearfix
+					div.btn-orange.right Быстрая покупка
+					div.btn.right.__big
+						i
+						| В корзину
+					div.product-price 26 990,-
+		div.row
+			div.product-social.col-lg-7.col-md-7.col-sm-12.col-xs-12
+				span.product-social-text Поделиться:
+				ul.soc.navbar.navbar-horizontal
+
+					li
+						a(href='#' target="_blank")
+							i.fa.fa-facebook
+
+					li
+						a(href='#' target="_blank")
+							i.fa.fa-vk
+
+					li
+						a(href='#' target="_blank")
+							i.fa.fa-twitter
+
+					li
+						a(href='#' target="_blank")
+							i.fa.fa-instagram
+
+		div.product-list.__product
+			div.container
+				h2.js-show-catalog.product-list-show Рекомендации
+				div.product-list-ctn
+					.owl-carousel
+						div.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									!='\n'
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+
+
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									!='\n'
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+
+
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/3.jpg', alt='')
+								a.title(href='#') Наушники Beats Pro белые
+								.price
+									del 29 990
+									!='\n'
+									ins 24 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+
+
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/1.jpg', alt='')
+								a.title(href='#') Apple Watch Sport 42мм белый спортивный ремешок
+								.price
+									del 29 990
+									!='\n'
+									ins 26 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+
+
+						.item
+							.item-wrap
+								a.img
+									img(src='images/example/2.jpg', alt='')
+								a.title(href='#') Apple iPhone 6 64Гб Space Grey
+								.price
+									del 58 990
+									!='\n'
+									ins 55 990,-
+								a.btn.to_cart(href='#')
+									i
+									| В корзину
+
+		div.js-tabs
+			div.tabs.clearfix
+				a(href="#tab-overview" data-tabs="tab-overview" class="tabs-item __current") Обзор
+				a(href="#tab-characteristics" data-tabs="tab-characteristics" class="tabs-item") Характеристики
+				a(href="#tab-reviews" data-tabs="tab-reviews" class="tabs-item") Отзывы и обсуждения
+
+
+				a(href="#tab-advantages" data-tabs="tab-advantages" class="tabs-item").__advantages
+					span.hidden-sm.hidden-xs Преимущества покупки у нас
+					span.hidden-md.hidden-lg Наши преимущества
+				a(href="#tab-tradein" data-tabs="tab-recommend" class="tabs-item").__recommend
+					span Trade In
+
+
+			div.tabs-ctn
+				div.tabs-content(data-tabs-group="tab-overview" id="tab-overview" class="__current")
+					div.tabs-content-info
+						h3 Часы по-новому
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru
+						h3 Уведомления
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru
+				div.tabs-content(data-tabs-group="tab-characteristics" id="tab-characteristics")
+					div.tabs-content-info
+						div.table-responsive
+							table.table.table-striped
+								tr
+									th #
+									th Имя
+									th Фамилия
+									th Имя пользователя
+								tr
+									th(scope='row') 1
+									td Марк
+									td Отто
+									td @mdo
+								tr
+									th(scope='row') 2
+									td  Джейкоб
+									td Торнтон
+									td @fat
+								tr
+									th(scope='row') 3
+									td Ларри
+									td Птица
+									td @twitter
+
+				div.tabs-content(data-tabs-group="tab-reviews" id="tab-reviews")
+					div.tabs-content-info
+
+						|    <div id="vk_comments"></div>
+						|            <script type="text/javascript">
+						| VK.Widgets.Comments("vk_comments", {limit: 40, width: "1038", attach: "*"});
+						|    </script>
+
+
+				div.tabs-content(data-tabs-group="tab-recommend" id="tab-tradein")
+					div.tabs-content-info
+						p
+							b Хотите купить новый IPhone, но не знаете, что делать со старым?&nbsp;
+							| БИГ ГИК предлагает вам уникальную услугу обмена вашего старого телефона по системе Trade-in!
+				div.tabs-content(data-tabs-group="tab-advantages" id="tab-advantages")
+					div.tabs-content-info
+						h3 Часы по-новому
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laboru
+
+
+	include modules/utp
+	div.container
+		div.seo-text
+			p
+				| Маков.нет уже на протяжении пяти лет является одним из лидеров на рынке мобильной техники и гаджетов. Вы не ошибетесь с выбором, став нашим постоянным клиентом - тысячи людей оценили нашу надежность и качественное обслуживание.
+			p
+				| Мы привыкли дарить яркие впечатления и делать покупки приятными и быстрыми. Поверьте, нас хватит еще надолго.На нашем сайте собраны сотни товаров от ведущих производителей. У нас вы без проблем сможете купить Macbook Air 2013, Apple Airport Time Capsule и многие другие товары. Мы не гонимся за сиюминутной прибылью, поэтому наши цены доступны. Кроме этого, у нас действует программа премирования постоянных клиентов. Став нашим постоянным клиентом, вы не только получите первоклассный сервис, но и не останетесь без приятных бонусов.
+			p
+				| Мы напрямую работаем с такими крупными компаниями, как Apple, Samsung, Sony, Blackberry, SGP, incase и Jawbone, что дает полную уверенность в качестве товара и цены. Мы всегда честны перед вами и привыкли ассоциировать наш магазин со словом "надежность". Поэтому на весь товар мы даем годовую гарантию. Наш сервисный центр максимально быстро решит любые проблемы и проведет диагностику.
+			p
+				| Мы с гордостью сообщаем вам и о том, что являемся одним из самых активных интернет-магазинов в социальных сетях и регулярно проводим уникальные предложения и предлагаем подарки и специальные условия покупки для подписчиков! Приобретая Mac, iPad, а также новейшие iPhone 5 и iPod, вы можете рассчитывать на внимательное отношение к каждому клиенту, квалифицированную помощь в решении технических вопросов и скидки на дальнейшие покупки, мы всегда рады слышать вас и сделать ваше знакомство с гаджетами приятнее!

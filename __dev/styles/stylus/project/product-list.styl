@@ -1,4 +1,36 @@
 .product-list
+	&.__product
+		padding 0
+		@media (max-width: 760px)
+			margin-bottom: 30px;
+	&-show
+		border: 1px solid #E6E6E6;
+		margin: 0 -20px 10px;
+		font-size: 18px;
+		padding: 2px 5px;
+		cursor pointer
+		vertical-align: middle;
+		@media (max-width: 760px)
+			margin: 0 -30px;
+		&:hover, &.__active
+			background #eee
+		&.__active
+			&:after
+				sprite($s-select-arrow-up)
+		&.__active + .product-list-ctn
+			opacity 1
+			visibility visible
+			height auto
+
+		&:after
+			content ''
+			display inline-block
+			sprite($s-select-arrow)
+			margin-left 5px
+	&-ctn
+		opacity 0
+		visibility hidden
+		height 0
 	&.__catalog
 		padding 0
 		@media (max-width: 770px)

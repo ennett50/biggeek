@@ -323,7 +323,8 @@ gulp.task('bowerJS:build', function () {
         'bower_components/jquery-ui-touch-punch-improved/jquery.ui.touch-punch-improved.js',
         'bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.js',
         'bower_components/nouislider/distribute/nouislider.js',
-        'bower_components/owl.carousel/dist/owl.carousel.min.js'
+        'bower_components/owl.carousel/dist/owl.carousel.min.js',
+        'bower_components/slick-carousel/slick/slick.min.js'
 
     ])
         .pipe(concat('vendor.min.js'))

@@ -12,6 +12,7 @@ $('.product-list .owl-carousel').each(function () {
         loop: true,
         margin: 10,
         nav: true,
+        navSpeed: 700,
         responsive: {
             0: {
                 items: 1
@@ -261,40 +262,50 @@ $("input[name='phone']").mask("+7 (999) 999-9999");
 
 $("#catalog-link a").click(function (e) {
     if (!$("nav #nav_left").hasClass("active")) {
-
         $(this).closest("li").addClass("active");
         $(this).addClass('active');
         $("nav #nav_left").addClass("active");
-
-        $("body").on("click.catalogMenu", function () {
-
-            $("nav #nav_left").removeClass("active");
-            $("#catalog-link a").removeClass("active").closest("li").removeClass("active");
-
-            //$("body").off("click.catalogMenu");
-        })
-    }
-    else {
-        $("body").trigger("click.catalogMenu");
+        $('body').append('<div class="js-menu-hide menu-hide"></div>');
     }
     e.stopPropagation();
     return false;
 });
 
+$('body').on('click', '.js-menu-hide', function(){
+    $("nav #nav_left").removeClass("active");
+    $("#catalog-link a").removeClass("active");
+    $(this).remove();
+});
 
 $('#nav_left >li >a').on('click', function (e) {
     var sublevel_1 = $(this).parent().find('.combo');
+    var nameCategory=$(this).text();
     if (sublevel_1.length) {
-
+        $(this).parent().find('.combo > ul').prepend('' +
+        '<li><a href="#" class="js-callback-level-1 callback-level">Назад</a></li>' +
+        '<li class="js-category-1 nav-category-name">'+ nameCategory +'</a></li>' +
+        '');
         sublevel_1.show();
         return false
     } else {
-        alert('df')
         return true
     }
 });
 
-
+$('.combo').on('click', '.js-callback-level-1', function (e) {
+    e.preventDefault();
+    var sublevel_1 = $(this).parents('.combo');
+    sublevel_1.hide();
+    $(this).parent('li').remove();
+    $('.js-category-1').remove();
+    $('#nav_left').addClass('active');
+});
+$(window).resize(function(){
+    $("nav #nav_left").removeClass("active");
+    $("#catalog-link a").removeClass("active");
+    $('.js-callback-level-1').remove();
+    $('.js-menu-hide').hide();
+});
 // --------------------------------------- /catalog menu toggle -------------------------------------------
 
 
@@ -414,7 +425,15 @@ var ui = {
         doRefreshUI(form);
     },
     catalogFilter: function () {
+        $('.js-filter-clear').on('click', function(){
+           alert('Очистить')
+        });
 
+        $('.js-clear-search').on('click', function(){
+            $(this).parent().find('.js-search-catalog').val('').parent().find('.catalog-filter-list').removeClass('hidden');
+            $(this).parent().find(".nano")[0].nanoscroller.reset();
+            $('.js-search-info').remove();
+        });
 
         $('.js-btn-filter').on('click', function () {
             $(this).toggleClass('__active');
@@ -434,6 +453,9 @@ var ui = {
             } else {
                 $(this).html('Еще бренды');
             }
+        });
+        $('.js-show-catalog').on('click', function(){
+            $(this).toggleClass('__active');
         });
 
         $('.js-filter-category').each(function () {
@@ -540,8 +562,92 @@ $(document).ready(function () {
 
 // --------------------------------------- gui elements -------------------------------------------
 
+// --------------------------------------- gallery product -------------------------------------------
+$(document).ready(function () {
+    $('.js-product-slider').slick({
+        infinite: true,
+        vertical: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: '.js-product-detail',
+        focusOnSelect: true
+    });
+    $('.js-product-detail').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.js-product-slider'
+    });
+
+    $(window).resize(function(){
+        if ($(window).outerWidth() <= 640 ) {
+            $('.js-product-slider').slick('unslick');
+            $('.js-product-slider').slick({
+                infinite: true,
+                vertical: false,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                asNavFor: '.js-product-detail',
+                focusOnSelect: true
+            });
+        } else {
+            $('.js-product-slider').slick('unslick');
+            $('.js-product-slider').slick({
+                infinite: true,
+                vertical: true,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                asNavFor: '.js-product-detail',
+                focusOnSelect: true
+            });
+        }
+    });
+
+});
 
 
-//window.onerror = function (errorMsg, url, lineNumber) {
-//    alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
-//}
+// --------------------------------------- gallery product -------------------------------------------
+
+// --------------------------------------- accordion product -------------------------------------------
+
+$(document).ready(function(){
+    $('.js-accordion:first').addClass('__active').next().show();
+    $('.js-accordion').on('change', function(){
+        $('.js-accordion').removeClass('__active');
+        $('.product-info-desc').slideUp();
+
+        $(this).addClass('__active').next().slideDown();
+    });
+});
+
+// --------------------------------------- accordion product -------------------------------------------
+
+
+
+// --------------------------------------- tabs product ------------------------------------------------
+$('body').on('click', '.js-tabs a[href][data-tabs]', function(e) {
+    e.preventDefault();
+    var $tab = $(this);
+    $('.js-tabs a, [data-tabs-group]').removeClass('__current');
+    $('[data-tabs-group="' + $tab.attr('data-tabs') + '"]').addClass('__current');
+    $tab.addClass('__current');
+});
+
+$(window).resize(function () {
+    if ($(window).outerWidth() <= 745 ) {
+        $('.js-tabs a[href][data-tabs]').each(function(){
+            var tab = $(this).clone();
+
+            $('[data-tabs-group="' + $(this).attr('data-tabs') + '"]').find('.tabs-item').remove();
+            $('[data-tabs-group="' + $(this).attr('data-tabs') + '"]').prepend(tab)
+
+            $(this).click(function(){
+                $(this).toggleClass('__current')
+            })
+        });
+    } else {
+        $('[data-tabs-group]').find('.tabs-item').remove();
+    }
+});
+// --------------------------------------- tabs product ------------------------------------------------
