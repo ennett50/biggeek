@@ -60,7 +60,7 @@ h2 {
 
 .container {
     width: auto;
-    max-width: 1110px;
+    max-width: 1140px;
     padding: 0 15px;
 }
 
@@ -600,7 +600,7 @@ input[type='text'], textarea {
     border: 1px solid #e6e6e6;
     outline: none;
     padding: 0 12px;
-    color: #b3b3b3;
+    color: #333;
     font-size: 13px;
     font-weight: 300;
     width: 100%;
@@ -778,12 +778,15 @@ input[type='submit'], button, input[type='button'] {
 
 .product-list .title {
     font-weight: 500;
+    color:#6a3b6b;
     font-size: 15px;
     line-height: 24px;
     max-width: 80%;
     display: inline-block;
 }
-
+.product-list .title:hover {
+      color: #2d99f1;
+  }
 .product-list .price {
     font-size: 24px;
     margin: 20px 0 30px;

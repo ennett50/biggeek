@@ -1,0 +1,36 @@
+.counter
+	position relative
+	white-space nowrap
+	min-width 104px
+	&-btn, &-text
+		float left
+
+	&-btn
+		height 34px
+		line-height 34px
+		text-align center
+		border 1px solid #e6e6e6
+		width 34px
+		cursor pointer
+		&.__disabled
+			&:before
+				color #eee!important
+		&.__min
+			border-right 0
+			font-size: 14px;
+			&:before
+				content: '—'
+				color #2d99f1
+		&.__max
+			border-left 0
+			font-size: 22px;
+			&:before
+				content: '+'
+				color #2d99f1
+	&-text[type='text']
+		width 34px
+		color #333
+		height 34px
+		line-height 34px
+		padding 0 3px
+		text-align center

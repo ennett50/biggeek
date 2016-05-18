@@ -1,0 +1,203 @@
+.basket
+	position relative
+	margin-bottom 40px
+	&-control
+		position: absolute;
+		top: 56px;
+		right: 21px;
+		@media (max-width: 700px)
+			position relative
+			top 0
+			right 0
+		&-clear
+			margin-right 20px
+		&-back
+			color #b3b3b3
+			border-color #b3b3b3
+
+	&-item
+		border-top 1px solid #ececec
+		position relative
+		padding 15px
+		display: table;
+		width: 100%;
+		@media (max-width: 700px)
+			display block
+			margin: 0 -20px;
+			width: auto;
+			padding-left 135px
+			padding-right 40px
+		&:first-child
+			border 0
+			@media (max-width: 700px)
+				border-top 1px solid #ececec
+		&-img
+			display table-cell
+			vertical-align middle
+			content-center(16%, 170px)
+			@media (max-width: 700px)
+				height 105px
+				display block
+				position absolute
+				top 15px
+				left 15px
+				width 105px
+
+		&-desc
+			display table-cell
+			vertical-align middle
+			width 50%
+			padding 0 20px
+			@media (max-width: 700px)
+				display block
+				width auto
+				padding 0
+		&-title
+			font-weight: 500;
+			color: #6a3b6b;
+			font-size: 15px;
+			display inline-block
+			margin-bottom 5px
+			&:hover
+				color #2d99f1
+		p
+			margin 0 0 5px
+		&-count
+			display table-cell
+			vertical-align middle
+			width 16%
+			@media (max-width: 700px)
+				display block
+				width auto
+				margin-top 12px
+		&-price
+			display table-cell
+			vertical-align middle
+			width 14%
+			padding 0 25px
+			@media (max-width: 700px)
+				display block
+				width auto
+				padding 0
+				margin 15px 0 0
+
+		&-all-price
+			color: #f27151;
+			font-size 24px
+			font-weight bold
+			text-decoration: none;
+			white-space: nowrap;
+		&-clear
+			display table-cell
+			vertical-align middle
+			@media (max-width: 700px)
+				display block
+				width 15px
+				position absolute
+				top: 18px;
+				right: 15px;
+		&-remove
+			cursor pointer
+			&:hover
+				opacity: 0.5
+			&:before
+				content ''
+				display block
+				sprite($s-remove)
+	&-additional
+		margin-bottom 30px
+		&-text
+			cursor pointer
+			color #6a3b6b
+			font-size 15px
+			padding 13px 15px
+			background #fafafa
+			font-weight bold
+			border 1px solid #ebebeb
+			position relative
+			&.__active
+				& + .basket-additional-ctn
+					display block
+				&:after
+					sprite($s-icon-more-up)
+			&:after
+				content ''
+				sprite($s-icon-more)
+				position absolute
+				right 15px
+				top 50%
+				margin-top -6px
+		&-ctn
+			border 1px solid #ebebeb
+			padding 15px 15px 5px
+			border-top 0
+			font-size 15px
+			display: none
+			.ui-type-checkbox .ui-button-text, .ui-type-radio .ui-button-text
+				font-size 15px
+				.basket-additional-more
+					display block
+					margin-top 7px
+			.ui-type-checkbox, .ui-type-radio, .ui-type-checkbox .ui-button-text, .ui-type-radio .ui-button-text
+				margin-right 10px
+				margin-bottom 10px
+
+			.ui-state-default a
+				color #6a3b6b
+				&:hover
+					color: #2d99f1;
+		&-more
+			display block
+			margin-top 5px
+		&-price
+			color #f27151
+			font-weight bold
+	&-cupon
+		position relative
+		margin-bottom 30px
+		@media (min-width: 992px)
+			max-width 350px
+			margin-bottom 0
+		input[type="text"]
+			line-height 45px
+			height 45px
+			padding-right 125px
+		.btn
+			line-height 45px
+			height 45px
+			width: 112px;
+			position absolute
+			z-index 2
+			top 0
+			right 0
+	&-footer
+		margin-bottom 50px
+		@media (min-width: 992px)
+			margin-bottom 100px
+		.btn.__big
+			float right
+			font-weight bold
+			width 190px
+			@media (max-width: 530px)
+				display: block;
+				float: none;
+				width: 100%;
+				margin-bottom: 20px;
+	&-price
+		&-total
+			float right
+			font-size 28px
+			font-weight bold
+			margin-right: 22px;
+			margin-top: 12px;
+			color #f27151
+		&-text
+			color #b3b3b3
+			font-size 14px
+			text-align right
+			margin-right 25px
+			float right
+			span
+				margin-bottom: 7px;
+				font-size: 28px;
+				display block

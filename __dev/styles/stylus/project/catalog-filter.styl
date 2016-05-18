@@ -19,9 +19,24 @@
 		&.__active
 			display block!important
 	&-clear
-		&:before
+		font-size 11px
+		display: inline-block;
+		line-height: 16px;
+		margin-bottom: 15px;
+		color #8B8380
+		border-bottom 1px dotted #8B8380
+		position relative
+		cursor pointer
+		trans()
+		&:hover
+			color #333
+			border-color #333
+		&:after
 			content ''
-			display inline-block
+			display block
+			position absolute
+			top: 4px;
+			right: -13px;
 			background-image images("icons/icon-close.png")
 			background-position 50% 50%
 			background-repeat no-repeat

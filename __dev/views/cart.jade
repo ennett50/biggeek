@@ -1,0 +1,104 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Корзина"
+block title
+	title= currentPageTitle
+
+block block-content
+	div.container.inner-wrapper
+
+		h1 Коризина: 3 товара
+
+		div.basket-control
+			a(href="#").basket-control-clear.falseLink Вернуться к покупкам
+			!="\n"
+			a(href="#").basket-control-back.falseLink Очистить корзину
+		form(method="" action="").basket
+			div.basket-item
+				div.basket-item-img
+					img(src="https://placeholdit.imgix.net/~text?txtsize=46&bg=67ddaf&txtclr=ffffff&txt=170%C3%97170&w=170&h=170")
+				div.basket-item-desc
+					a(href="#").basket-item-title Apple iPhone 6 64Гб Space Grey
+					p Цвет: белый
+					p Комплект: Стандартный комплект
+				div.basket-item-count
+					div(class="counter js-counter clearfix")
+						div(class="counter-btn __min")
+						input(type="text" value="1" class="counter-text")
+						div(class="counter-btn __max")
+				div.basket-item-price
+					div.basket-item-all-price 1 126 990,-
+				div.basket-item-clear
+					a(href="#").basket-item-remove
+			div.basket-item
+				div.basket-item-img
+					img(src="https://placeholdit.imgix.net/~text?txtsize=46&bg=67ddaf&txtclr=ffffff&txt=170%C3%97170&w=170&h=170")
+				div.basket-item-desc
+					a(href="#").basket-item-title Apple iPhone 6 64Гб Space Grey спортивный ремешок
+					p Цвет: белый
+					p Комплект: Стандартный комплект
+				div.basket-item-count
+					div(class="counter js-counter clearfix")
+						div(class="counter-btn __min")
+						input(type="text" value="1" class="counter-text")
+						div(class="counter-btn __max")
+				div.basket-item-price
+					div.basket-item-all-price 26 990,-
+				div.basket-item-clear
+					a(href="#").basket-item-remove
+			div.basket-item
+				div.basket-item-img
+					img(src="https://placeholdit.imgix.net/~text?txtsize=46&bg=67ddaf&txtclr=ffffff&txt=170%C3%97170&w=170&h=170")
+				div.basket-item-desc
+					a(href="#").basket-item-title Apple iPhone 6 64Гб Space Grey
+					p Цвет: белый
+					p Комплект: Стандартный комплект
+				div.basket-item-count
+					div(class="counter js-counter clearfix")
+						div(class="counter-btn __min")
+						input(type="text" value="1" class="counter-text")
+						div(class="counter-btn __max")
+				div.basket-item-price
+					div.basket-item-all-price 26 990,-
+				div.basket-item-clear
+					a(href="#").basket-item-remove
+			div.basket-additional
+				div.basket-additional-text.__active.js-basket-additional Дополнительные услуги
+				div.basket-additional-ctn
+					input(type="checkbox" name="additional" id="additional-1")
+					label(for="additional-1") Наклейки пленки <span class="basket-additional-price">300,-</span>
+						span.basket-additional-more
+							a(href="#") Подробнее
+
+					input(type="checkbox" name="additional" id="additional-2")
+					label(for="additional-2") Страховка <span class="basket-additional-price">500,-</span>
+						span.basket-additional-more
+							a(href="#") Подробнее
+
+					input(type="checkbox" name="additional" id="additional-3")
+					label(for="additional-3") Установка приложений <span class="basket-additional-price">500,-</span>
+						span.basket-additional-more
+							a(href="#") Подробнее
+			div.basket-footer.row
+				div.col-lg-5.col-xs-12.col-md-5
+					div.basket-cupon
+						input(type="text" placeholder="Купон а скидку")
+						input(type="button" value="Применить").btn
+				div.col-lg-7.col-xs-12.col-md-7
+					input(type="submit" value="Оформить заказ").btn.__big
+					div.basket-price-total 80 970,-
+					div.basket-price-text
+						span Итого:
+						|без учета доставки
+	include modules/utp
+	div.container
+		div.seo-text
+			p
+				| Маков.нет уже на протяжении пяти лет является одним из лидеров на рынке мобильной техники и гаджетов. Вы не ошибетесь с выбором, став нашим постоянным клиентом - тысячи людей оценили нашу надежность и качественное обслуживание.
+			p
+				| Мы привыкли дарить яркие впечатления и делать покупки приятными и быстрыми. Поверьте, нас хватит еще надолго.На нашем сайте собраны сотни товаров от ведущих производителей. У нас вы без проблем сможете купить Macbook Air 2013, Apple Airport Time Capsule и многие другие товары. Мы не гонимся за сиюминутной прибылью, поэтому наши цены доступны. Кроме этого, у нас действует программа премирования постоянных клиентов. Став нашим постоянным клиентом, вы не только получите первоклассный сервис, но и не останетесь без приятных бонусов.
+			p
+				| Мы напрямую работаем с такими крупными компаниями, как Apple, Samsung, Sony, Blackberry, SGP, incase и Jawbone, что дает полную уверенность в качестве товара и цены. Мы всегда честны перед вами и привыкли ассоциировать наш магазин со словом "надежность". Поэтому на весь товар мы даем годовую гарантию. Наш сервисный центр максимально быстро решит любые проблемы и проведет диагностику.
+			p
+				| Мы с гордостью сообщаем вам и о том, что являемся одним из самых активных интернет-магазинов в социальных сетях и регулярно проводим уникальные предложения и предлагаем подарки и специальные условия покупки для подписчиков! Приобретая Mac, iPad, а также новейшие iPhone 5 и iPod, вы можете рассчитывать на внимательное отношение к каждому клиенту, квалифицированную помощь в решении технических вопросов и скидки на дальнейшие покупки, мы всегда рады слышать вас и сделать ваше знакомство с гаджетами приятнее!
+

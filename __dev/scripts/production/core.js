@@ -426,7 +426,10 @@ var ui = {
     },
     catalogFilter: function () {
         $('.js-filter-clear').on('click', function(){
-           alert('Очистить')
+           var parentFiler = $(this).parent();
+           if (parentFiler.find('[data-filter-slider]').length ){
+
+           }
         });
 
         $('.js-clear-search').on('click', function(){
@@ -651,3 +654,37 @@ $(window).resize(function () {
     }
 });
 // --------------------------------------- tabs product ------------------------------------------------
+
+
+
+// --------------------------------------- cart counter ------------------------------------------------
+var counter = $('.js-counter');
+counter.on('click', '.__max', function (e) {
+    var item;
+    item = $(this).closest('.counter').find('.counter-text');
+    item.val(Number(1 * item.val()) + 1);
+    $(this).parent('.counter').find('.__min.__disabled').removeClass('__disabled');
+    e.preventDefault()
+
+});
+counter.on('click', '.__min', function (e) {
+    var item;
+    item = $(this).closest('.counter').find('.counter-text');
+    item.val(Number(1 * item.val()) - 1);
+    if (item.val() === 0 || item.val() <= 0) {
+        item.val(Number(0));
+        $(this).addClass('__disabled');
+    }
+    e.preventDefault()
+
+});
+counter.each(function () {
+    if ($(this).find('.counter-text').val() == '0') {
+        $(this).find('.__min').addClass('__disabled');
+    }
+});
+
+$('.js-basket-additional').on('click', function(){
+   $(this).toggleClass('__active');
+});
+// --------------------------------------- cart counter ------------------------------------------------
