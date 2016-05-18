@@ -1,0 +1,112 @@
+extends layouts/_default
+block vars
+	-var currentPageTitle = "Оформление заказа"
+block title
+	title= currentPageTitle
+
+block block-content
+	div.container.inner-wrapper
+		h1 Оформление заказа
+
+		a(href="#").falseLink.checkout-back Вернуться к покупкам
+
+
+		form(action="" method=).checkout-form.clearfix
+			hr
+			div.checkout-title Покупатель
+
+			div.checkout-login
+				a(href="#").falseLink У меня уже есть аккаунт
+				a(href="#").falseLink
+					b Зарегистрироваться
+				span.checkout-login-text Войти через:
+				div.checkout-login-social
+					a(href="#").checkout-login-item
+						img(src="images/example/social-widget.png" alt="")
+
+			div.form-horizontal
+				div.form-group.has-error
+					label.col-sm-3.control-label Имя:
+					div.col-sm-9
+						input(type="text")
+				div.form-group
+					label.col-sm-3.control-label E-mail:
+					div.col-sm-9
+						input(type="text")
+				div.form-group
+					label.col-sm-3.control-label Телефон:
+					div.col-sm-9
+						input(type="text").js-phone-mask
+				div.form-group
+					label.col-sm-3.control-label Комментарий к заказу:
+					div.col-sm-9
+						textarea
+			hr
+			div.checkout-title Способ получения товара
+
+			div.checkout-item
+				input(type="radio" name="type-delivery" id="type-pickup")
+				label(for="type-pickup") Самовывоз&nbsp;
+					span.checkout-price бесплатно
+					span.checkout-description Вы можете самостоятельно забрать заказ, приехав к нам в магазин по адресу: Москва, Багратионовский проезд 7 стр. 2
+
+			div.checkout-item
+				input(type="radio" name="type-delivery" id="type-delivery")
+				label(for="type-delivery") Доставка
+
+				div.checkout-item-detail
+					div.falseLink.__active Свернуть варианты
+					div.form-horizontal
+						div.form-group.has-error
+							label.col-sm-3.control-label Адрес доставки:
+							div.col-sm-9
+								textarea
+
+					div.checkout-item
+						input(type="radio" name="type-delivery-more" id="type-1")
+						label(for="type-1") Стандартная доставка по Москве в пределах МКАД&nbsp;
+							span.checkout-price 300,-
+							span.checkout-description Стандартная курьерская доставка по Москве в пределах МКАД (доставка осуществляется с 12.00 до 18.00)
+
+					div.checkout-item
+						input(type="radio" name="type-delivery-more" id="type-2")
+						label(for="type-2") Стандартная доставка по Мосве за МКАД&nbsp;
+							span.checkout-price 500,-
+							span.checkout-description Рассчитывается оператором -30р. каждый километр от МКАД, минимум 500р.
+
+					div.checkout-item
+						input(type="radio" name="type-delivery-more" id="type-3")
+						label(for="type-3") Доставка крупногабаритных товаров по Москве в пределах МКАД &nbsp;
+							span.checkout-price 500,-
+
+					div.checkout-item
+						input(type="radio" name="type-delivery-more" id="type-4")
+						label(for="type-4") Срочная доставка по Москве в пределх МКАД&nbsp;
+							span.checkout-price 500,-
+							span.checkout-description Мы привезем заказанный вами товар в течении 2х часов
+					div.checkout-item
+						input(type="radio" name="type-delivery-more" id="type-5")
+						label(for="type-5") Бесплатная VIP доставка&nbsp;
+							span.checkout-price бесплатно
+							span.checkout-description Распространяется на твоары из категории "Товары с бесплатной доставкой" и на любой товар при покупке 2х аксессуаров
+					div.checkout-item
+						input(type="radio" name="type-delivery-more" id="type-6")
+						label(for="type-6") Стандартная доставка по Санкт-Петербургу&nbsp;
+							span.checkout-price 500,-
+							span.checkout-description Стандартная доставка по всему городу, от одного до 7 дней
+					div.checkout-item
+						input(type="radio" name="type-delivery-more" id="type-7")
+						label(for="type-7") Доставка в регион службой SPSR&nbsp;
+							span.checkout-description Доставка в любой регион России службой СПСР. Стоимость можно рассчитать <a href="#">здесь</a>
+					div.checkout-item
+						input(type="radio" name="type-delivery-more" id="type-8")
+						label(for="type-8") Доставка в регион службой EMS&nbsp;
+							span.checkout-description Доставка в любой регион России службой EMS. Стоимость доставки рассчитывается автмоатически.
+					div.checkout-item
+						input(type="radio" name="type-delivery-more" id="type-9")
+						label(for="type-9") Доставка в регион службой Pony Express&nbsp;
+							span.checkout-description Доставка в любой регион России службой Pony Express. В данный момент автоматический расчет работает в тестовом режиме.
+
+
+				hr
+				input(type="submit" value="Следующий шаг").btn.checkout-btn

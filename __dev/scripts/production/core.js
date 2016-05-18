@@ -254,7 +254,7 @@ $("#pozvonim-button .pozvonim-button-phone, .callback-link").click(function (e) 
 // --------------------------------------- /callback toggle -------------------------------------------
 
 
-$("input[name='phone']").mask("+7 (999) 999-9999");
+$("input[name='phone'], .js-phone-mask").mask("+7 (999) 999-9999");
 
 
 // --------------------------------------- catalog menu toggle -------------------------------------------

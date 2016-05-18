@@ -1,0 +1,67 @@
+.checkout
+	position relative
+	&-form
+		.form-horizontal
+			max-width 855px
+		input[type='text'], textarea
+			line-height 48px
+			height 48px
+			font-size 14px
+
+		.form-horizontal .control-label
+			text-align: left;
+			margin-bottom: 0;
+			color: #808080;
+			font-size: 18px;
+			font-weight: 300;
+			@media (min-width: 768px)
+				padding-top: 11px;
+		textarea
+			height 144px
+		hr
+			margin: 35px 0;
+		.form-group
+			margin-bottom 20px
+	&-title
+		font-size 21px
+		font-weight bold
+		margin-bottom 25px;
+	&-back
+		position absolute
+		top: 54px;
+		right: 20px;
+	&-login
+		position relative
+		margin-bottom 30px
+		color #4d4d4d;
+		font-size 15px
+		font-weight 300
+		.falseLink
+			margin-right 22px
+		&-text
+			display inline-block
+			vertical-align middle
+			margin-right 7px
+		&-social
+			display inline-block
+			vertical-align middle
+		&-item
+			display inline-block
+			vertical-align middle
+			margin 0 10px 0 0
+	&-item
+		margin-bottom 20px
+		.ui-button-text
+			color #333
+			font: bold 15px/22px "Ubuntu";
+			margin-top 0
+			.checkout-description
+				display block
+			span
+				vertical-align inherit
+	&-price
+		color #f27151
+	&-description
+		display block
+		font-weight 300
+		color #808080
